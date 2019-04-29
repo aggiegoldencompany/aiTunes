@@ -8,5 +8,8 @@ After cloning the repository, create a folder named data. Download the required 
       │   ├── audio
       │   ├── features
       │   ├── metadata
+      |   ├── songs
       │   └── mfcc
       ├── ...
+
+Add the songs for which you want to predict emotions under songs directory.
