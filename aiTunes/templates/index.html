@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aiTunes</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script type= "text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+</head>
+<body>
+<nav class="navbar-expand-lg fixed-top navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">aiTunes
+    </a>
+</nav>
+
+<div class="songs-row" style="margin-bottom: 60px; margin-top: 60px">
+  <div class="songs-column">
+    <h2>All Songs</h2>
+    <ul class="list-group"  id="all_songs_list" style="padding-bottom: 20px">
+    {% for row in form[0] %}
+        <li class="list-group-item" id="{{ row[0].replace("songs/", "").replace(".mp3", "") }}">
+            <a class="link" onclick = setMusic("{{ row[0] }}")>{{ row[1] }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="songs-column">
+    <h2>Queue</h2>
+    <ul class="list-group" id="queue-songs-list" style="padding-bottom: 20px"></ul>
+  </div>
+</div>
+
+
+<nav class="navbar-expand-lg fixed-bottom navbar navbar-dark bg-dark">
+    <audio controls id="player" src="songs/1.mp3"> Your browser dose not Support the audio Tag </audio>
+</nav>
+</body>
+</html>

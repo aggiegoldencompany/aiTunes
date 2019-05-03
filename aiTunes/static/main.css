@@ -1,0 +1,17 @@
+
+audio {
+  width:100%;
+}
+
+
+.songs-row {
+  display: flex;
+}
+
+.songs-column {
+  flex: 50%;
+}
+
+a {
+    cursor: pointer;
+}
