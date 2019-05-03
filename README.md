@@ -12,4 +12,4 @@ After cloning the repository, create a folder named data. Download the required 
       │   └── mfcc
       ├── ...
 
-Add the songs for which you want to predict emotions under songs directory.
+Add the songs for which you want to predict emotions under songs directory. Copy the songs directory to the aiTunes folder also, and edit the song metadata folder according to your music library.
